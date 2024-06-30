@@ -166,22 +166,21 @@ const teamMembers = [
     { name: 'Tilman Wyss', position: 'Builder', imgSrc: 'path-to-image', bio: 'Blank' },
     { name: 'Kenan Khatib', position: 'Notebooker', imgSrc: 'path-to-image', bio: 'Blank' },
     { name: 'Henry Xing', position: 'Notebooker', imgSrc: 'path-to-image', bio: 'Blank' },
-    { name: 'Z’ev Danielli', position: 'Programmer', imgSrc: 'path-to-image', bio: 'I'm awesome.' }
+    { name: 'Z’ev Danielli', position: 'Programmer', imgSrc: 'path-to-image', bio: 'I’m awesome.' }
     // Add more team members here
 ];
 
-// Function to create member cards
 function createMemberCard(member) {
-    return
-    <div class="member-card">
-        <img src="${member.imgSrc}" alt="${member.name}">
-        <h3>${member.name}</h3>
-        <p>${member.position}</p>
-        <p>${member.bio}</p>
-        
-    </div>
-    `;
+    return (
+        <div className="member-card">
+            <img src={member.imgSrc} alt={member.name} />
+            <h3>{member.name}</h3>
+            <p>{member.position}</p>
+            <p>{member.bio}</p>
+        </div>
+    );
 }
+
 
 // Function to render team members
 function renderTeamMembers() {
