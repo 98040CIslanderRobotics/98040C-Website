@@ -157,7 +157,6 @@ body {
 
 
 <script>
-// Example data for team members
 const teamMembers = [
     
     { name: 'Harry Nguyen', position: 'Driver, Builder', imgSrc: 'path-to-image', bio: 'Blank' },
@@ -166,21 +165,21 @@ const teamMembers = [
     { name: 'Tilman Wyss', position: 'Builder', imgSrc: 'path-to-image', bio: 'Blank' },
     { name: 'Kenan Khatib', position: 'Notebooker', imgSrc: 'path-to-image', bio: 'Blank' },
     { name: 'Henry Xing', position: 'Notebooker', imgSrc: 'path-to-image', bio: 'Blank' },
-    { name: 'Z’ev Danielli', position: 'Programmer', imgSrc: 'path-to-image', bio: 'I’m awesome.' }
-    // Add more team members here
+    { name: 'Z’ev Danielli', position: 'Programmer', imgSrc: 'path-to-image', bio: 'I’m awesome.' },
+
 ];
 
 // Function to create member cards
 function createMemberCard(member) {
-    return (
+    return `
     <div class="member-card">
         <img src="${member.imgSrc}" alt="${member.name}">
         <h3>${member.name}</h3>
-        <p>${member.position}</p>
+        <h4>${member.position}</h4>
         <p>${member.bio}</p>
         
     </div>
-    );
+    `;
 }
 
 // Function to render team members
