@@ -160,13 +160,13 @@ body {
 // Example data for team members
 const teamMembers = [
     
-    { name: 'Harry Nguyen', position: 'Driver, Builder', imgSrc: 'path-to-image' },
-    { name: 'Brian Kwon', position: 'Programmer', imgSrc: 'path-to-image' },
-    { name: 'Jeremy Leung', position: 'Notebooker', imgSrc: 'path-to-image' },
-    { name: 'Tilman Wyss', position: 'Builder', imgSrc: 'path-to-image' },
-    { name: 'Kenan Khatib', position: 'Notebooker', imgSrc: 'path-to-image' },
-    { name: 'Henry Xing', position: 'Notebooker', imgSrc: 'path-to-image' },
-    { name: 'Z’ev Danielli', position: 'Programmer', imgSrc: 'path-to-image' },
+    { name: 'Harry Nguyen', position: 'Driver, Builder', imgSrc: 'path-to-image', bio: 'Blank' },
+    { name: 'Brian Kwon', position: 'Programmer', imgSrc: 'path-to-image', bio: 'Blank'},
+    { name: 'Jeremy Leung', position: 'Notebooker', imgSrc: 'path-to-image', bio: 'Blank'},
+    { name: 'Tilman Wyss', position: 'Builder', imgSrc: 'path-to-image', bio: 'Blank' },
+    { name: 'Kenan Khatib', position: 'Notebooker', imgSrc: 'path-to-image', bio: 'Blank' },
+    { name: 'Henry Xing', position: 'Notebooker', imgSrc: 'path-to-image', bio: 'Blank' },
+    { name: 'Z’ev Danielli', position: 'Programmer', imgSrc: 'path-to-image', bio: 'I'm awesome.' },
     // Add more team members here
 ];
 
@@ -176,7 +176,9 @@ function createMemberCard(member) {
     <div class="member-card">
         <img src="${member.imgSrc}" alt="${member.name}">
         <h3>${member.name}</h3>
-        <p>${member.position}</p>
+        <h4>${member.position}</h4>
+        <p>${member.bio}</p>
+        
     </div>
     `;
 }
