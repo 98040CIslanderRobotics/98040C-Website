@@ -172,7 +172,7 @@ const teamMembers = [
 
 // Function to create member cards
 function createMemberCard(member) {
-    return `
+    return (
     <div class="member-card">
         <img src="${member.imgSrc}" alt="${member.name}">
         <h3>${member.name}</h3>
@@ -180,7 +180,7 @@ function createMemberCard(member) {
         <p>${member.bio}</p>
         
     </div>
-    `;
+    );
 }
 
 // Function to render team members
