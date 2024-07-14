@@ -108,27 +108,36 @@
       }
 
       .member-card {
-        background: #f2f2f2;
-        margin: 10px;
-        padding: 20px;
-        text-align: center;
-        width: calc(25% - 20px);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+          background: #f2f2f2;
+          margin: 10px;
+          padding: 20px;
+          text-align: center;
+          width: calc(25% - 20px);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+          transition: transform 0.3s ease; /* Add transition for smooth scaling */
       }
 
       .member-card img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover; /* Ensure image covers the circle */
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover; /* Ensure image covers the circle */
+          transition: transform 0.3s ease; /* Add transition for smooth scaling */
       }
 
       .member-card h3 {
-        margin: 10px 0;
+          margin: 10px 0;
       }
 
       .member-card p {
-        margin: 5px 0;
+          margin: 5px 0;
+      }
+      .member-card:hover {
+        transform: scale(1.1); /* Scale up on hover */
+      }
+
+      .member-card:hover img {
+        transform: scale(1.1); /* Scale up image on hover */
       }
       /* ... rest of your styles */
       .footer {
@@ -249,13 +258,15 @@
 
       function createMemberCard(member) {
         return `
-    <div class="member-card">
-      <img src="${member.imgSrc}" alt="${member.name}" />
-      <h3>${member.name}</h3>
-      <p>${member.position}</p>
-      <p>${member.bio}</p>
-    </div>
-  `;
+            <div class="member-card"
+                onmouseover="this.style.transform='scale(1.1)'"
+                onmouseout="this.style.transform='scale(1)'">
+                <img src="${member.imgSrc}" alt="${member.name}" />
+                <h3>${member.name}</h3>
+                <p>${member.position}</p>
+                <p>${member.bio}</p>
+            </div>
+        `;
       }
 
       // Function to render team members
