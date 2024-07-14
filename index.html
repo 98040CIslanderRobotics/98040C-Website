@@ -108,21 +108,21 @@
       }
 
       .member-card {
-          background: #f2f2f2;
-          margin: 10px;
-          padding: 20px;
-          text-align: center;
-          width: calc(25% - 20px);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-          transition: transform 0.3s ease; /* Add transition for smooth scaling */
+        background: #9fc5e8; /* light blue for member cards */
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        width: calc(25% - 20px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        transition: transform 0.3s ease; /* Add transition for smooth scaling */
       }
 
       .member-card img {
           width: 100px;
           height: 100px;
-          border-radius: 50%;
+          border-radius: 0%; /* Adjust the border-radius for smoother corners */
           object-fit: cover; /* Ensure image covers the circle */
-          transition: transform 0.3s ease; /* Add transition for smooth scaling */
+          transition: transform 0.3s ease, border-radius 0.3s ease; /* Add transition for smooth scaling and corner rounding */
       }
 
       .member-card h3 {
@@ -132,12 +132,14 @@
       .member-card p {
           margin: 5px 0;
       }
+
       .member-card:hover {
-        transform: scale(1.1); /* Scale up on hover */
+          transform: scale(1.2); /* Scale up on hover */
       }
 
-      .member-card:hover img {
-        transform: scale(1.1); /* Scale up image on hover */
+      .member-card img:hover {
+          transform: scale(1.2); /* Scale up the image slightly on hover */
+          border-radius: 30%; /* Change the border-radius on hover for a circular effect */
       }
       /* ... rest of your styles */
       .footer {
@@ -250,22 +252,21 @@
         {
           name: "Z’ev Danielli",
           position: "Programmer",
-          imgSrc: "path-to-image",
+          imgSrc: "path-to-image", 
           bio: "I’m awesome.",
         },
-        // Add more team members here
+        // Add more team members here 
       ];
-
+        // <img src="${member.imgSrc}" alt="No Image Yet" />  Removed since We havent generated images yet and it looks ugly with it, copy and paste this line under onmouseout once we added team member images
       function createMemberCard(member) {
         return `
             <div class="member-card"
-                onmouseover="this.style.transform='scale(1.1)'"
-                onmouseout="this.style.transform='scale(1)'">
-                <img src="${member.imgSrc}" alt="${member.name}" />
-                <h3>${member.name}</h3>
-                <p>${member.position}</p>
-                <p>${member.bio}</p>
-            </div>
+              onmouseover="this.style.transform='scale(1.1)'"
+              onmouseout="this.style.transform='scale(1)'">
+              <h3>${member.name}</h3>
+              <p>${member.position}</p>
+              <p>${member.bio}</p>
+          </div>
         `;
       }
 
