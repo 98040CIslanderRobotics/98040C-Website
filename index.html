@@ -6,10 +6,12 @@
     <title>98040C Slippery Penguins</title>
     <style>
       body {
-        font-family: "Arial", sans-serif;
+        font-family: "Times New Roman", sans-serif;
+        font-size: 20px;
         margin: 0;
         padding: 0;
-        background-color: #ffffff; /* background */
+        background-color: #ffffff00; /* background */
+        color: black;
       }
 
       .navbar {
@@ -23,13 +25,13 @@
       .navbar a {
         float: left;
         display: block;
-        color: white;
+        color: black;
         text-align: center;
         padding: 14px 20px;
         text-decoration: none;
       }
       .navbar a:hover {
-        background-color: #ddd;
+        background-color: #dddddd00;
         color: black;
       }
       /* ... more of your styles */
@@ -37,6 +39,7 @@
         position: relative;
         height: 50vh;
         overflow: hidden;
+        background-color: #000000;
       }
 
       .mySlide {
@@ -45,7 +48,12 @@
         height: 100%;
         background-size: cover;
         background-position: center;
+        opacity: 0; /* Initially hide all slides */
+        transition: opacity 1s ease; /* Smooth transition for opacity */
         animation: slide 12s infinite; /* 12 seconds for each slide */
+      }
+      .mySlide.active {
+        opacity: 1; /* Show active slide */
       }
 
       @keyframes slide {
@@ -77,9 +85,9 @@
       }
 
       .main-header {
-        padding: 200px 40px; /* Increased padding for scrolling effect */
+        padding: 50px 40px; /* Increased padding for scrolling effect */
         text-align: center;
-        color: black;
+        background-color: #000000;
         position: relative; /* For positioning the overlay */
       }
       .fade-out {
@@ -104,7 +112,7 @@
         flex-wrap: wrap;
         justify-content: center;
         padding: 50px; /* Increased padding */
-        background-color: white; /* White background for team section */
+        background-color: black; /* White background for team section */
       }
 
       .member-card {
@@ -115,12 +123,12 @@
         width: calc(25% - 20px);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
         transition: transform 0.3s ease; /* Add transition for smooth scaling */
+        border-radius: 15px;
       }
 
       .member-card img {
           width: 100px;
           height: 100px;
-          border-radius: 0%; /* Adjust the border-radius for smoother corners */
           object-fit: cover; /* Ensure image covers the circle */
           transition: transform 0.3s ease, border-radius 0.3s ease; /* Add transition for smooth scaling and corner rounding */
       }
@@ -144,7 +152,7 @@
       /* ... rest of your styles */
       .footer {
         background-color: #47b5ff; /* Light blue footer */
-        color: white;
+        color: black;
         text-align: center;
         padding: 10px;
         position: relative;
@@ -163,7 +171,7 @@
     </div>
     <div class="slideshow-container">
       <div
-        class="mySlide"
+        class="mySlide active"
         style="
           background-image: url('https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1714678860/mercerislandschoolsorg/ik0cr0kyryevsfcfxkon/01.jpg');
         "
@@ -183,13 +191,13 @@
     </div>
 
     <div class="main-header" id="index">
-      <h1>98040C</h1>
+      <h1 style="color: #9fc5e8;" >98040c</h1>
       <img
         src="Transpeng.png"
         alt="Team Logo"
-        style="max-width: 40%; height: auto"
+        style="max-width: 30%; height: auto; background-color:#000000;"
       />
-      <p>
+      <p style="color:#9fc5e8;">
         We are a group of aspiring students, now Freshmen at the Mercer Island
         High School in Mercer Island, WA. Our team is made up of seven
         "Penguins": Harry (Team Captain), Jeremy, Brian, Til, Kenan, Henry and
@@ -197,12 +205,12 @@
         pushing boundaries, exploring new possibilities, and reaching for
         excellence.
       </p>
-      <p>
+      <p style="color:#9fc5e8;">
         Our mission is to inspire our community to partake in STEM learning and
         teamwork by inspiring them through team excellence and sharing of the
         skills we had achieved
       </p>
-      <p>Our Vision for 98040C: idr yall never sent it to me</p>
+    <p style="color: #9fc5e8;">Vision for 98040C: idr yall never sent it to me </p>
     </div>
 
     <div class="team-section" id="team"></div>
@@ -289,27 +297,15 @@
       function showSlides() {
         let slides = document.getElementsByClassName("mySlide");
         for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+          slides[i].style.opacity = "0";
         }
         slideIndex++;
         if (slideIndex > slides.length) {
           slideIndex = 1;
         }
-        slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].style.opacity = "1";
         setTimeout(showSlides, 4000); // Change image every 4 seconds
       }
-
-      window.addEventListener("scroll", function () {
-        var scrollValue = window.scrollY;
-        var slideshow = document.querySelector(".slideshow-container");
-
-        if (scrollValue > 150) {
-          // Adjust the scroll threshold as needed
-          slideshow.classList.add("fade-out");
-        } else {
-          slideshow.classList.remove("fade-out");
-        }
-      });
     </script>
   </body>
 </html>
