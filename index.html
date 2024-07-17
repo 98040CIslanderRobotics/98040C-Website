@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    //Webhook?
     <title>98040C Slippery Penguins</title>
     <style>
       body {
@@ -10,12 +9,12 @@
         font-size: 20px;
         margin: 0;
         padding: 0;
-        background-color: #ffffff00; /* background */
+        background-color: #ffffff00; /* Transparent background */
         color: black;
       }
 
       .navbar {
-        background-color: #47b5ff; /*  navbar */
+        background-color: #47b5ff; /* Blue navbar */
         overflow: hidden;
         position: fixed;
         top: 0;
@@ -31,15 +30,15 @@
         text-decoration: none;
       }
       .navbar a:hover {
-        background-color: #dddddd00;
+        background-color: #dddddd00; /* Light gray on hover */
         color: black;
       }
-      /* ... more of your styles */
+
       .slideshow-container {
         position: relative;
         height: 70vh;
         overflow: hidden;
-        background-color: #000000;
+        background-color: #000000; /* Black background */
       }
 
       .mySlide {
@@ -87,12 +86,8 @@
       .main-header {
         padding: 50px 40px; /* Increased padding for scrolling effect */
         text-align: center;
-        background-color: #000000;
+        background-color: #000000; /* Black header background */
         position: relative; /* For positioning the overlay */
-      }
-      .fade-out {
-        opacity: 0;
-        transition: opacity 1s ease-in-out; /* Add a smooth transition */
       }
 
       .main-header::after {
@@ -112,11 +107,11 @@
         flex-wrap: wrap;
         justify-content: center;
         padding: 50px; /* Increased padding */
-        background-color: black; /* White background for team section */
+        background-color: black; /* Black background for team section */
       }
 
       .member-card {
-        background: #9fc5e8; /* light blue for member cards */
+        background: #9fc5e8; /* Light blue background for member cards */
         margin: 10px;
         padding: 20px;
         text-align: center;
@@ -126,30 +121,11 @@
         border-radius: 15px;
       }
 
-      .member-card img {
-          width: 100px;
-          height: 100px;
-          object-fit: cover; /* Ensure image covers the circle */
-          transition: transform 0.3s ease, border-radius 0.3s ease; /* Add transition for smooth scaling and corner rounding */
-      }
-
-      .member-card h3 {
-          margin: 10px 0;
-      }
-
-      .member-card p {
-          margin: 5px 0;
-      }
-
       .member-card:hover {
-          transform: scale(1.2); /* Scale up on hover */
-      }
-
-      .member-card img:hover {
-          transform: scale(1.2); /* Scale up the image slightly on hover */
-          border-radius: 30%; /* Change the border-radius on hover for a circular effect */
+        transform: scale(1.2); /* Scale up on hover */
       }
       /* ... rest of your styles */
+
       .footer {
         background-color: #47b5ff; /* Light blue footer */
         color: black;
@@ -159,7 +135,6 @@
         bottom: 0;
         width: 100%;
       }
-      /* ... rest of your styles */
     </style>
   </head>
   <body>
@@ -169,44 +144,26 @@
       <a href="contact">Contact</a>
       <a href="sponsor">Sponsor</a>
     </div>
+
     <div class="slideshow-container">
-      <div
-        class="mySlide active"
-        style="
-          background-image: url('https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1714678860/mercerislandschoolsorg/ik0cr0kyryevsfcfxkon/01.jpg');
-        "
-      ></div>
-      <div
-        class="mySlide"
-        style="
-          background-image: url('https://pbs.twimg.com/media/GH20Zx0boAA4xSY.jpg:large');
-        "
-      ></div>
-      <div
-        class="mySlide"
-        style="
-          background-image: url('https://pbs.twimg.com/media/GH20ZxzbwAAVugG?format=jpg&name=large');
-        "
-      ></div>
+      <div class="mySlide active" style="background-image: url('https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1714678860/mercerislandschoolsorg/ik0cr0kyryevsfcfxkon/01.jpg');"></div>
+      <div class="mySlide" style="background-image: url('https://pbs.twimg.com/media/GH20Zx0boAA4xSY.jpg:large');"></div>
+      <div class="mySlide" style="background-image: url('https://pbs.twimg.com/media/GH20ZxzbwAAVugG?format=jpg&name=large');"></div>
     </div>
 
     <div class="main-header" id="index">
-      <h1 style="color: #ffffff; font-size: 80px; margin-top: -600px; margin-left: 50px; width: 550px; text-align: left; ">
+      <h1 style="color: #ffffff; font-size: 80px; margin-top: -600px; margin-left: 50px; width: 550px; text-align: left;">
         <span style="color: #ffffff; -webkit-text-stroke: 3px black; font-size: 80px; font-weight: bold;">
           Join Us On Our Journey In Vex Robotics
         </span>
-      </h1>      
-      <img 
-        src="https://media.discordapp.net/attachments/1001916431526527036/1263208903508754564/Screenshot_2024-07-17_at_12.00.51_PM.png?ex=66996677&is=669814f7&hm=0a5164d109017bbc147408a1aff6c65c9eedbf8254c04eab5c9b6e3809d3c965&=&format=webp&quality=lossless&width=1362&height=1108"
-        alt="Team Logo"
-        style="max-width: 40%; height: auto; background-color:#000000; margin-top: 130px; margin-left: 1000px;"
-      />
-      <p style="color: #9fc5e8; font-size: 80px ; margin-top: -450px; margin-right: 700px;">
+      </h1>
+      <img src="https://media.discordapp.net/attachments/1001916431526527036/1263208903508754564/Screenshot_2024-07-17_at_12.00.51_PM.png?ex=66996677&is=669814f7&hm=0a5164d109017bbc147408a1aff6c65c9eedbf8254c04eab5c9b6e3809d3c965&=&format=webp&quality=lossless&width=1362&height=1108" alt="Team Logo" style="max-width: 40%; height: auto; background-color:#000000; margin-top: 130px; margin-left: 1000px;" />
+      <p style="color: #9fc5e8; font-size: 80px; margin-top: -450px; margin-right: 700px;">
         <span style="color: #9fc5e8; font-size: 80px; font-weight: bold;">
           Who are We?
         </span>
       </p>
-      <p style="color:#9fc5e8; margin-top: -50px; margin-right: 500px; width: 900px; font-size: 35px;">
+      <p style="color: #9fc5e8; margin-top: -50px; margin-right: 500px; width: 900px; font-size: 35px;">
         We are a group of aspiring students, now Freshmen at the Mercer Island
         High School in Mercer Island, WA. Our team is made up of seven
         "Penguins": Harry (Team Captain), Jeremy, Brian, Til, Kenan, Henry and
@@ -227,61 +184,53 @@
         {
           name: "Harry Nguyen",
           position: "Driver, Builder",
-          imgSrc: "path-to-image",
           bio: "I am the lead packer!",
         },
         {
           name: "Brian Kwon",
           position: "Programmer",
-          imgSrc: "path-to-image",
           bio: "I’m one of the coders on our team!",
         },
         {
           name: "Jeremy Leung",
           position: "Notebooker",
-          imgSrc: "path-to-image",
           bio: "Blank",
         },
         {
           name: "Tilman Wyss",
           position: "Builder",
-          imgSrc: "path-to-image",
           bio: "I'm one of the builders on our team!",
         },
         {
           name: "Kenan Khatib",
           position: "Notebooker",
-          imgSrc: "path-to-image",
           bio: "I am one of the team notebookers",
         },
         {
           name: "Henry Xing",
           position: "Notebooker",
-          imgSrc: "path-to-image",
           bio: "✐ᝰ I am one of the team notebookers ✐ᝰ",
         },
         {
           name: "Z’ev Danielli",
           position: "Programmer",
-          imgSrc: "path-to-image", 
           bio: "I’m awesome.",
         },
         // Add more team members here 
       ];
-        // <img src="${member.imgSrc}" alt="No Image Yet" />  Removed since We havent generated images yet and it looks ugly with it, copy and paste this line under onmouseout once we added team member images
+
       function createMemberCard(member) {
         return `
-            <div class="member-card"
-              onmouseover="this.style.transform='scale(1.1)'"
-              onmouseout="this.style.transform='scale(1)'">
-              <h3>${member.name}</h3>
-              <p>${member.position}</p>
-              <p>${member.bio}</p>
+          <div class="member-card"
+            onmouseover="this.style.transform='scale(1.1)'"
+            onmouseout="this.style.transform='scale(1)'">
+            <h3>${member.name}</h3>
+            <p>${member.position}</p>
+            <p>${member.bio}</p>
           </div>
         `;
       }
 
-      // Function to render team members
       function renderTeamMembers() {
         const teamSection = document.querySelector(".team-section");
         teamMembers.forEach((member) => {
@@ -289,7 +238,6 @@
         });
       }
 
-      // Call the function to render team members
       renderTeamMembers();
     </script>
 
@@ -312,3 +260,4 @@
     </script>
   </body>
 </html>
+
