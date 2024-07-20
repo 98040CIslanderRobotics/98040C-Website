@@ -47,7 +47,6 @@ const teamMembers = [
   function createMemberCard(member) {
     return `
 <div class="member-card">
-  <img src="${member.imgSrc}" alt="${member.name}" />
   <h3>${member.name}</h3>
   <p>${member.position}</p>
   <p>${member.bio}</p>
