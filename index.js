@@ -46,13 +46,15 @@ const teamMembers = [
 
   function createMemberCard(member) {
     return `
-<div class="member-card">
-  <h3>${member.name}</h3>
-  <p>${member.position}</p>
-  <p>${member.bio}</p>
-</div>
-`;
+      <div class="member-card">
+        <h3>${member.name}</h3>
+        <p>${member.position}</p>
+        <p>${member.bio}</p>
+      </div>
+      <div class="element"></div>
+    `;
   }
+  
 
   // Function to render team members
   function renderTeamMembers() {
@@ -93,4 +95,21 @@ const teamMembers = [
   });
   document.getElementById('dark_mode_select').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const memberCards = document.querySelectorAll('.member-card');
+
+  memberCards.forEach(card => {
+    const element = card.nextElementSibling;
+
+    card.addEventListener('mouseenter', () => {
+      element.style.opacity = '1';
+      element.style.visibility = 'visible';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      element.style.opacity = '0';
+      element.style.visibility = 'hidden';
+    });
+  });
 });

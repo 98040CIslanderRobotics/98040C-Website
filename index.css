@@ -1,7 +1,7 @@
-:root{
+:root {
   --background-color: white;
   --main-header-text-color: black;
-  --navbar-color: #ddd;
+  --navbar-color: #47b5ff; /* Adjusted navbar color */
   --member-card-color: #c0c2c5;
   --bodytext-color: black;
 }
@@ -10,17 +10,18 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color); /* background */
+  background-color: var(--background-color);
 }
 
 .navbar {
-  background-color: #47b5ff; /*  navbar */
+  background-color: var(--navbar-color);
   overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
 }
+
 .navbar a {
   float: left;
   display: block;
@@ -29,11 +30,12 @@ body {
   padding: 14px 20px;
   text-decoration: none;
 }
+
 .navbar a:hover {
   background-color: var(--navbar-color);
   color: var(--main-header-text-color);
 }
-/* ... more of your styles */
+
 .slideshow-container {
   position: relative;
   height: 70vh;
@@ -83,6 +85,7 @@ body {
   color: var(--bodytext-color);
   position: relative; /* For positioning the overlay */
 }
+
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-in-out; /* Add a smooth transition */
@@ -114,7 +117,7 @@ body {
   margin: 10px;
   padding: 20px;
   text-align: center;
-  width: calc(25% - 20px);
+  width: calc(20% - 20px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
   border-radius: 30px;
   overflow: hidden; /* Ensures the image doesn't overflow */
@@ -122,8 +125,31 @@ body {
   transition: transform 0.3s ease; /* Smooth transition for transform */
 }
 
+.element {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Initially transparent */
+  visibility: hidden; /* Initially hidden */
+  z-index: 999; /* Ensure it covers other content */ 
+  pointer-events: none;
+}
+
+.member-card:hover + .element {
+  opacity: 1; /* Make .element fully opaque on hover */
+  visibility: visible; /* Ensure .element is visible on hover */
+  pointer-events: none;
+}
+
+.member-card {
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
 .member-card:hover {
-  transform: scale(1.15); /* Scale up slightly on hover */
+  transform: scale(1.1); /* Scale up slightly on hover */
 }
 
 .member-card img {
@@ -135,18 +161,11 @@ body {
 }
 
 .member-card:hover img {
-  transform: scale(1.15); /* Scale up the image on hover */
+  transform: scale(1.1); /* Scale up the image on hover */
 }
 
-.member-card h3 {
-  margin: 10px 0;
-}
-
-.member-card p {
-  margin: 5px 0;
-}
 .footer {
-  background-color: #47b5ff; /* Light blue footer */
+  background-color: var(--navbar-color); /* Adjusted footer color */
   color: var(--background-color);
   text-align: center;
   padding: 10px;
@@ -154,7 +173,8 @@ body {
   bottom: 0;
   width: 100%;
 }
-.toggle-dark-mode{
+
+.toggle-dark-mode {
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -167,10 +187,10 @@ body {
   overflow: hidden;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-body.dark-mode{
+
+body.dark-mode {
   --background-color: black;
   --main-header-text-color: white;
-  --navbar-color: tan;
   --member-card-color: #9fc5e8;
   --bodytext-color: #9fc5e8;
 }
