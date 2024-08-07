@@ -107,22 +107,71 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 50px; /* Increased padding */
+  padding: 10px; /* Increased padding */
   color: black;
   background-color: var(--background-color); /* White background for team section */
 }
 
+.member-card-container {
+  position: relative; /* Allows .bio-container to be positioned absolutely */
+  width: calc(20% - 20px); /* Adjust width to account for spacing */
+  margin: 1.5%;
+  box-sizing: border-box; /* Include padding and borders in the width */
+}
+
 .member-card {
   background-color: var(--member-card-color);
-  margin: 10px;
+  width: 100%; /* Ensure card takes full width of container */
   padding: 20px;
   text-align: center;
-  width: calc(20% - 20px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
-  overflow: hidden; /* Ensures the image doesn't overflow */
-  position: relative; /* Allows absolute positioning of child elements */
-  transition: transform 0.3s ease; /* Smooth transition for transform */
+  overflow: hidden;
+  position: relative; /* Allows absolute positioning of bio-container */
+  transition: transform 0.3s ease;
+}
+
+.bio-container {
+  position: absolute;
+  text-align: center;
+  bottom: 100%; /* Position above the .member-card */
+  left: 0;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  width: 96.5%;
+  margin-top: 20%; /* Space between card and bio container */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  pointer-events: none; /* Prevent interaction when hidden */
+  z-index: 1000;
+}
+
+.member-card-container:hover .member-card {
+  z-index:1000;
+}
+
+.member-card-container:hover .element {
+  opacity: 1; /* Show bio container on hover */
+  visibility: visible; /* Ensure visibility */
+  z-index: 999;
+}
+
+.bio {
+  background: var(--member-card-color); /* Background color for bio */
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%; /* Optional: limit maximum width */
+  margin: 5% auto; /* Center bio content */
+}
+
+.bio img {
+  padding: 0px;
+  display: block; /* Ensure the image behaves as a block-level element */
+  max-width: 100%; /* Ensure image scales correctly */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+  margin: 0 auto; /* Center the image horizontally */
+  background: #fff; /* Optional: Background color to make it look like a box */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for the image box */
 }
 
 .element {
@@ -134,13 +183,7 @@ body {
   left: 0;
   opacity: 0; /* Initially transparent */
   visibility: hidden; /* Initially hidden */
-  z-index: 999; /* Ensure it covers other content */ 
-  pointer-events: none;
-}
-
-.member-card:hover + .element {
-  opacity: 1; /* Make .element fully opaque on hover */
-  visibility: visible; /* Ensure .element is visible on hover */
+  z-index: 998; /* Ensure it covers other content */ 
   pointer-events: none;
 }
 
@@ -174,7 +217,7 @@ body {
   width: 100%;
 }
 
-.toggle-dark-mode {
+.toggle-penguin-mode {
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -188,7 +231,7 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-body.dark-mode {
+body.penguin-mode {
   --background-color: black;
   --main-header-text-color: white;
   --member-card-color: #9fc5e8;
