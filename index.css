@@ -119,6 +119,13 @@ body {
   box-sizing: border-box; /* Include padding and borders in the width */
 }
 
+.member-card-container {
+  position: relative; /* Allows positioning of .bio-container */
+  width: calc(20% - 20px); /* Adjust width to account for spacing */
+  margin: 1.5%; /* Space between cards */
+  box-sizing: border-box; /* Include padding and borders in width */
+}
+
 .member-card {
   background-color: var(--member-card-color);
   width: 100%; /* Ensure card takes full width of container */
@@ -134,44 +141,67 @@ body {
 .bio-container {
   position: absolute;
   text-align: center;
-  bottom: 100%; /* Position above the .member-card */
-  left: 0;
+  bottom: 110%; /* Position above the .member-card */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
   opacity: 0; /* Initially hidden */
   visibility: hidden; /* Initially hidden */
-  width: 96.5%;
-  margin-top: 20%; /* Space between card and bio container */
+  width: 180%;
+  padding: 0 10px; /* Padding to ensure space from viewport edges */
+  margin-top: 20px; /* Space between card and bio container */
   transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
   pointer-events: none; /* Prevent interaction when hidden */
-  z-index: 1000;
+  z-index: 1000; /* Ensure it's above the member card */
 }
 
 .member-card-container:hover .member-card {
-  z-index:1000;
+  z-index: 1000;
 }
 
-.member-card-container:hover .element {
+.member-card-container:hover .bio-container {
   opacity: 1; /* Show bio container on hover */
   visibility: visible; /* Ensure visibility */
-  z-index: 999;
 }
 
 .bio {
   background: var(--member-card-color); /* Background color for bio */
-  padding: 15px;
+  padding: 15px; /* Add padding to the bio container */
   border-radius: 8px;
-  width: 100%; /* Optional: limit maximum width */
-  margin: 5% auto; /* Center bio content */
+  width: 100%; /* Ensure it fits within the bio-container */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center items vertically */
+  gap: 15px; /* Space between image and text */
+  margin: 0 auto; /* Center bio content within its container */
 }
 
 .bio img {
-  padding: 0px;
   display: block; /* Ensure the image behaves as a block-level element */
-  max-width: 100%; /* Ensure image scales correctly */
+  max-width: 60%; /* Set a fixed width or max-width as needed */
   height: auto; /* Maintain aspect ratio */
   border-radius: 8px; /* Rounded corners */
-  margin: 0 auto; /* Center the image horizontally */
   background: #fff; /* Optional: Background color to make it look like a box */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for the image box */
+}
+
+.bio-content {
+  flex: 1; /* Allow the content to take up remaining space */
+}
+
+.about-me {
+  margin-bottom: 20px; /* Space between "About Me" and the rest of the bio content */
+  text-align: center; /* Center text */
+}
+
+.about-me h2 {
+  font-size: 1.8em; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  margin: 10%; /* Remove default margin */
+}
+
+.about-me p {
+  font-size: 1em; /* Adjust font size as needed */
+  margin: 5px 0 0; /* Adjust margins as needed */
 }
 
 .element {
@@ -185,6 +215,11 @@ body {
   visibility: hidden; /* Initially hidden */
   z-index: 998; /* Ensure it covers other content */ 
   pointer-events: none;
+}
+
+.member-card-container:hover .element {
+  visibility: visible;
+  opacity: 1;
 }
 
 .member-card {

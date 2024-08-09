@@ -1,44 +1,38 @@
 const teamMembers = [
   {
     name: "Harry Nguyen",
-    position: "Driver, Builder",
-    job: "I am the lead packer!",
+    position: "Packer, Cleaner",
     bioId: 0 // Reference to the bio array
   },
   {
     name: "Brian Kwon",
     position: "Programmer",
-    job: "I’m one of the coders on our team!",
     bioId: 1 // Reference to the bio array
+  },
+  {
+    name: "Henry Xing",
+    position: "Notebooker",
+    bioId: 2 // Reference to the bio array
   },
   {
     name: "Jeremy Leung",
     position: "Notebooker",
     job: "Blank",
-    bioId: 2 // Reference to the bio array
+    bioId: 3 // Reference to the bio array
   },
   {
     name: "Tilman Wyss",
     position: "Builder",
-    job: "I’m one of the builders on our team!",
-    bioId: 3 // Reference to the bio array
+    bioId: 4 // Reference to the bio array
   },
   {
     name: "Kenan Khatib",
     position: "Notebooker",
-    job: "📝I am one of the team notebookers📝",
-    bioId: 4 // Reference to the bio array
-  },
-  {
-    name: "Henry Xing",
-    position: "Notebooker",
-    job: "📝I am one of the team notebookers📝",
     bioId: 5 // Reference to the bio array
   },
   {
     name: "Z’ev Danielli",
     position: "Programmer",
-    job: "I’m awesome.",
     bioId: 6 // Reference to the bio array
   },
   // Add more team members here
@@ -46,31 +40,31 @@ const teamMembers = [
 
 const bio = [
   {
-    about: "Bio information for Harry", //harry
-    imgSrc: "path-to-image-0",
+    about: "I’m the team lead and driver of 98040C and a freshman at MIHS. Besides robotics I like playing tennis and hanging out with friends.", //harry
+    imgSrc: "images/Harry.jpeg",
   },
   {
-    about: "Bio information for Brian", //brian
-    imgSrc: "path-to-image-1",
+    about: "During my free time I like to code small games, swim, spend time with my family, learn other languages of code, and play the violin.", //brian
+    imgSrc: "images/Brian.png",
   },
   {
-    about: "Bio information for Jeremy", //jeremy
+    about: "Outside of robotics, I enjoy swimming, playing my oboe, playing piano, hanging out with friends, and watching movies with my family.", //henry
     imgSrc: "path-to-image-2",
   },
   {
-    about: "Bio information for Tilman", //til
+    about: "Outside of robotics I like to play the Sax and work on woodworking. This year I am hoping to improve my build quality and efficiency.", //jeremy
     imgSrc: "path-to-image-3",
   },
   {
-    about: "Bio information for Kenan", //kenan
+    about: "In my free time I like to play football and tennis. And let’s face it I also like to eat McDonald’s and play Brawl stars.", //til
     imgSrc: "path-to-image-4",
   },
   {
-    about: "Bio information for Henry", //henry
-    imgSrc: "path-to-image-5",
+    about: "Outside of robotics I enjoy playing tennis and golf. I like working on the notebook and am learning Cad this year.", //kenan
+    imgSrc: "images/Kenan.png",
   },
   {
-    about: "Bio information for Z’ev", //zevi
+    about: "In my free time I like to mod for Tmodloader and grind rowing I also know multiple programming languages This year I would like to do more work and go further on the team ", //zevi
     imgSrc: "path-to-image-6",
   },
   // Add more bios here
@@ -83,13 +77,15 @@ function createMemberCard(member) {
       <div class="member-card" data-bio-id="${member.bioId}">
         <h3>${member.name}</h3>
         <p>${member.position}</p>
-        <p>${member.job}</p>
       </div>
       <div class="bio-container" data-bio-id="${member.bioId}">
         <div class="bio">
-          <p>${memberBio.about}</p>
-        </div>
-        <div class="bio">
+          <div class="bio-content">
+            <div class="about-me">
+              <h2>About Me</h2>
+              <p>${memberBio.about}</p>
+            </div>
+          </div>
           <img src="${memberBio.imgSrc}" alt="${member.name}">
         </div>
       </div>
